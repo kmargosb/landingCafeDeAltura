@@ -10,7 +10,7 @@
     <div class="contenedor">
         <header>
             <div class="header-content">
-                <div class="logo-cont">
+                <a href="./index.html" class="logo-cont">
                     <div class="logo">cafedealtura.com</div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="25" viewBox="0 0 21 26" fill="none">
                         <g clip-path="url(#clip0_13407_150)">
@@ -44,7 +44,7 @@
                             </clipPath>
                         </defs>
                     </svg>
-                </div>
+                </a>
                 <ul class="nav-bar">
                     <li><a href="./tienda.html" class="nav-btn">Tienda</a></li>
                     <li><a href="" class="nav-btn">Suscripción</a></li>
@@ -75,13 +75,14 @@
                             d="M14 10V5C14 3.93913 13.5786 2.92172 12.8284 2.17157C12.0783 1.42143 11.0609 1 10 1C8.93913 1 7.92172 1.42143 7.17157 2.17157C6.42143 2.92172 6 3.93913 6 5V10"
                             stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
+                    <span>2</span>
                 </div>
             </div>
         </header>
         <section class="cafe-cards">
             <h2>Últimos orígenes</h2>
             <div class="cafe-content">
-                <div class="product-card">
+                <div class="product-card card-hover">
                     <div class="img-cafe">
                         <img src="./assets/costaRica-product.png" alt="cafe-costaRica">
                     </div>
@@ -91,7 +92,7 @@
                     </div>
                     <button class="añadir">Añadir</button>
                 </div>
-                <div class="product-card">
+                <div class="product-card card-hover">
                     <div class="img-cafe">
                         <img src="./assets/colombia-product.png" alt="cafe-colombia">
                     </div>
@@ -101,7 +102,7 @@
                     </div>
                     <button class="añadir">Añadir</button>
                 </div>
-                <div class="product-card">
+                <div class="product-card card-hover">
                     <div class="img-cafe">
                         <img src="./assets/laos-product.png" alt="cafe-laos">
                     </div>
@@ -111,7 +112,7 @@
                     </div>
                     <button class="añadir">Añadir</button>
                 </div>
-                <div class="product-card">
+                <div class="product-card card-hover">
                     <div class="img-cafe">
                         <img src="./assets/etiopía-product.png" alt="cafe-etiopía">
                     </div>
@@ -121,10 +122,50 @@
                     </div>
                     <button class="añadir">Añadir</button>
                 </div>
+                <div class="product-card card-hover">
+                    <div class="img-cafe">
+                        <img src="./assets/kenia-product.png" alt="cafe-costaRica">
+                    </div>
+                    <div class="product-price">
+                        <h3>Kenia Ndunduri </h3>
+                        <p>15,00 €</p>
+                    </div>
+                    <button class="añadir">Añadir</button>
+                </div>
+                <div class="product-card card-hover">
+                    <div class="img-cafe">
+                        <img src="./assets/etiopiaSidamo-product.png" alt="cafe-costaRica">
+                    </div>
+                    <div class="product-price">
+                        <h3>Etiopía Sidamo</h3>
+                        <p>17,00 €</p>
+                    </div>
+                    <button class="añadir">Añadir</button>
+                </div>
+                <div class="product-card card-hover">
+                    <div class="img-cafe">
+                        <img src="./assets/costaRica-belloMonte-product.png" alt="cafe-costaRica">
+                    </div>
+                    <div class="product-price">
+                        <h3>Costa Rica Monte Bello</h3>
+                        <p>12,00 €</p>
+                    </div>
+                    <button class="añadir">Añadir</button>
+                </div>
+                <div class="product-card">
+                    <div class="img-cafe">
+                        <img src="./assets/colombia-laCasita-product.png" class="agotado" alt="cafe-costaRica">
+                    </div>
+                    <div class="product-price">
+                        <h3>Colombia La Casita</h3>
+                        <p>9,00 €</p>
+                    </div>
+                    <button class="añadir btn-agotado">Agotado</button>
+                </div>
             </div>
             <div class="verTodos">
                 <a href="">Ver todos</a>
-                <img src="./assets/flecha-next.png" width="24px" height="24px" alt="flecha-next">
+                <a href=""><img src="./assets/flecha-next.png" width="24px" height="24px" alt="flecha-next"></a>
             </div>
         </section>
         <section class="cards">
@@ -221,7 +262,7 @@
                         </button>
                     </div>
                     <div class="menu-footer marg1">
-                        <a href="">Tienda</a>
+                        <a href="./tienda.html">Tienda</a>
                         <a href="">Suscripción</a>
                         <a href="">Para empresas</a>
                         <a href="">Sobre nosotros</a>

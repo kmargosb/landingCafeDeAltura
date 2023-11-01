@@ -2,6 +2,22 @@
 
 :root {
     --Grey: #515051;
+    --gray-300: #D1D5DB;
+    --gray-500: #6B7280;
+    --gray-700: #374151;
+    --Dark-grey: #2B2A2B;
+    --Black: #1F1815;
+    --Real-Black: #000;
+    --black-p: #111827;
+    --Taupe: #E3DED7;
+    --Green: #2A5B45;
+    --Green-a: rgba(42, 91, 69, 0.70);
+    --Off-white: #F7F5F3;
+    --hover-nav: rgba(247, 245, 243, 0.10);
+    --hover-inp: #9B9EA3;
+    --focus-inp: #3F8F6B;
+
+    --white: #fff;
 }
 
 * {
@@ -22,8 +38,8 @@
 
 header {
     width: 100%;
-    color: white;
-    background-color: black;
+    color: var(--white);
+    background-color: var(--Dark-grey);
     display: flex;
     justify-content: center;
 }
@@ -42,10 +58,11 @@ header {
     display: flex;
     align-items: center;
     gap: 7.33px;
+    text-decoration: none;
 }
 
 .logo {
-    color: #FFF;
+    color: var(--white);
     font-size: 23.463px;
     font-weight: 400;
     line-height: 35.194px;
@@ -63,10 +80,11 @@ header {
     padding: 8px;
     border-radius: 10px;
     text-decoration: none;
-    color: white;
+    color: var(--white);
 }
-.nav-btn:hover{
-    background-color: rgba(247, 245, 243, 0.10);
+
+.nav-btn:hover {
+    background-color: var(--hover-nav);
 }
 
 .tel-btn-nav {
@@ -84,12 +102,12 @@ header {
 .nro-tel {
 
     border: none;
-    color: white;
+    color: var(--white);
     background-color: transparent;
 }
 
 .btn-log {
-    color: white;
+    color: var(--white);
     background: var(--Grey, #515051);
     border: none;
     border-radius: 4px;
@@ -98,8 +116,32 @@ header {
 
 .bag {
     padding: 2px 3px;
+
+    display: flex;
+    gap: 8px;
+}
+
+svg {
     width: 24px;
     height: 24px;
+}
+
+.bag>span {
+    width: 24px;
+    height: 24px;
+    border-radius: 200px;
+    padding: 8px;
+    color: var(--white);
+    background: var(--hover-nav);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
 }
 
 /*----Hero----*/
@@ -129,7 +171,7 @@ header {
     font-size: 18px;
     font-weight: 600;
     line-height: 24px;
-    color: #2A5B45;
+    color: var(--Green);
 }
 
 .hero-txt h1 {
@@ -139,7 +181,7 @@ header {
 }
 
 .hero-txt p {
-    color: #111827;
+    color: var(--black-p);
     font-size: 14px;
     font-weight: 400;
     line-height: 16px;
@@ -155,15 +197,15 @@ header {
     border: none;
     border-radius: 4px;
     font-size: 14px;
-    color: white;
+    color: var(--white);
 }
 
 .hero-txt button:first-child {
-    background-color: #1F1815;
+    background-color: var(--Black);
 }
 
 .hero-txt button:last-child {
-    background-color: #2A5B45;
+    background-color: var(--Green);
 }
 
 .hero-img {
@@ -190,7 +232,7 @@ header {
 }
 
 .cards>h2 {
-    color: white;
+    color: var(--white);
     font-weight: 500;
     line-height: 28px;
 
@@ -205,10 +247,10 @@ header {
 .card {
     width: 100%;
     padding: 24px;
-    border: 1px solid #F7F5F3;
+    border: 1px solid var(--Off-white);
     border-radius: 8px;
     box-shadow: 0px 1px 4px 0px rgba(227, 222, 215, 0.80);
-    background: white;
+    background: var(--white);
 
     display: flex;
     flex-direction: column;
@@ -222,11 +264,11 @@ header {
     height: 64px;
     padding: 12px;
     border-radius: 20px;
-    background: #2A5B45;
+    background: var(--Green);
 }
 
 .card h3 {
-    color: #2B2A2B;
+    color: var(--Dark-grey);
     text-align: center;
     font-size: 18px;
     font-weight: 600;
@@ -235,7 +277,7 @@ header {
 
 .card p {
     text-align: center;
-    color: #111827;
+    color: var(--black-p);
     font-size: 14px;
     font-weight: 400;
     line-height: 16px;
@@ -253,7 +295,7 @@ header {
 }
 
 .cafe-cards h2 {
-    color: #2A5B45;
+    color: var(--Green);
     font-size: 24px;
     font-weight: 500;
     line-height: 28px;
@@ -262,22 +304,33 @@ header {
 .cafe-content {
     width: 1200px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 24px;
 }
 
 .product-card {
-    width: 100%;
+    width: 282px;
     padding: 24px;
     border-radius: 8px;
+    border: 1px solid var(--Taupe);
 
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 24px;
 }
-.product-card:hover{
-    background-color: #E3DED7;
+
+.agotado {
+    opacity: 0.4;
+}
+
+.card-hover:hover {
+    background-color: var(--Off-white);
+}
+
+.card-hover:hover .añadir {
+    background-color: var(--Green);
     cursor: pointer;
 }
 
@@ -307,16 +360,17 @@ header {
 
 .añadir {
     padding: 8px;
-    color: white;
-    background-color: rgba(42, 91, 69, 0.70);
+    color: var(--white);
+    background-color: var(--Green-a);
     border: none;
     border-radius: 4px;
     font-size: 14px;
     font-weight: 600;
     line-height: 16px;
 }
-.añadir:hover{
-    background-color: #2A5B45;
+
+.btn-agotado {
+    background-color: var(--Taupe);
 }
 
 .verTodos {
@@ -326,17 +380,18 @@ header {
 }
 
 .verTodos a {
+    display: flex;
     font-size: 14px;
     font-weight: 600;
     line-height: 16px;
-    color: black;
+    color: var(--Real-Black);
 }
 
 /*----FAQ----*/
 
 .faq {
     width: 1280px;
-    background-color: #2A5B45;
+    background-color: var(--Green);
     padding: 48px 386px;
 
     display: flex;
@@ -346,7 +401,7 @@ header {
 }
 
 .faq>h2 {
-    color: white;
+    color: var(--white);
     font-size: 24px;
     font-weight: 500;
     line-height: 28px;
@@ -360,7 +415,7 @@ header {
 
 .faq-cards {
     padding: 24px;
-    background: white;
+    background: var(--white);
     border-radius: 10px;
     width: 668px;
 
@@ -375,7 +430,7 @@ header {
 }
 
 .faq-title>h3 {
-    color: #2B2A2B;
+    color: var(--Dark-grey);
     font-size: 18px;
     font-weight: 600;
     line-height: 24px;
@@ -388,11 +443,11 @@ header {
 .faq-cards span {
     width: 100%;
     height: 1px;
-    background: #E3DED7;
+    background: var(--Taupe);
 }
 
 .faq-cards p {
-    color: #2B2A2B;
+    color: var(--Dark-grey);
     font-size: 12px;
     font-weight: 400;
     line-height: 16px;
@@ -405,14 +460,11 @@ header {
 }
 
 .faq-next a {
+    display: flex;
     font-size: 14px;
     font-weight: 600;
     line-height: 16px;
-    color: rgb(255, 255, 255);
-}
-
-.faq-next>img {
-    color: white;
+    color: var(--white);
 }
 
 /*----FEATURE----*/
@@ -436,6 +488,7 @@ header {
 .feature-left {
     width: 457px;
     height: 116px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -443,14 +496,14 @@ header {
 }
 
 .feature-left>h2 {
-    color: #2A5B45;
+    color: var(--Green);
     font-size: 24px;
     font-weight: 500;
     line-height: 28px;
 }
 
 .feature-left>p {
-    color: #111827;
+    color: var(--black-p);
     font-size: 14px;
     font-weight: 400;
     line-height: 16px;
@@ -464,7 +517,8 @@ header {
 }
 
 .comoLlegar>a {
-    color: black;
+    display: flex;
+    color: var(--Real-Black);
     font-size: 14px;
     font-weight: 600;
     line-height: 16px;
@@ -484,7 +538,7 @@ header {
 .formulario {
     width: 1280px;
     height: 552px;
-    background: #E3DED7;
+    background: var(--Taupe);
     display: flex;
     justify-content: center;
 }
@@ -515,14 +569,14 @@ header {
 }
 
 .form-left-header>h3 {
-    color: #111827;
+    color: var(--black-p);
     font-size: 18px;
     font-weight: 600;
     line-height: 24px;
 }
 
 .form-left p {
-    color: #6B7280;
+    color: var(--gray-500);
     font-size: 14px;
     font-weight: 400;
     line-height: 16px;
@@ -547,7 +601,7 @@ header {
 }
 
 .ver-nuestras {
-    color: #111827;
+    color: var(--black-p);
     font-size: 14px;
     font-weight: 600;
     line-height: 16px;
@@ -557,7 +611,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: white;
+    background: var(--white);
     width: 588px;
     height: 552px;
     padding: 32px 32px 32px 48px;
@@ -578,24 +632,27 @@ form {
 }
 
 .labels {
-    color: #374151;
+    color: var(--gray-700);
     font-size: 12px;
     font-weight: 400;
     line-height: 16px;
 }
-.tel-tel{
+
+.tel-tel {
     display: flex;
 }
-.tel-input{
+
+.tel-input {
     width: 470px;
     height: 34px;
     padding: 9px 13px 9px 60px;
-    border-radius: 6px;    
+    border-radius: 6px;
     background: transparent;
     position: relative;
     right: 40px;
 }
-select{
+
+select {
     position: relative;
     left: 8px;
     background: transparent;
@@ -612,12 +669,18 @@ select{
 
     display: flex;
 }
-.inp{
-    border: 1px solid #D1D5DB;
+
+.inp {
+    border: 1px solid var(--gray-300);
 }
-.inp:focus{
-    border: 2px solid #3F8F6B;
-    outline: #3F8F6B;
+
+.inp:hover {
+    border: 1px solid var(--hover-inp);
+}
+
+.inp:focus {
+    border: 2px solid var(--focus-inp);
+    outline: var(--focus-inp);
 }
 
 
@@ -627,9 +690,10 @@ textarea {
     resize: vertical;
     max-height: 150px;
 }
-.escribe{
+
+.escribe {
     padding-bottom: 4px;
-    
+
 }
 
 .form-acepto {
@@ -638,14 +702,14 @@ textarea {
 }
 
 .form-acepto>p {
-    color: #374151;
+    color: var(--gray-700);
     font-size: 14px;
     font-weight: 400;
     line-height: 16px;
 }
 
 .a-de-acepto {
-    color: #374151;
+    color: var(--gray-700);
     font-size: 14px;
     line-height: 16px;
     font-weight: 600;
@@ -657,9 +721,9 @@ textarea {
 }
 
 .btn-enviar {
-    color: white;
+    color: var(--white);
     padding: 12px 24px;
-    background-color: #2A5B45;
+    background-color: var(--Green);
     border: none;
     border-radius: 4px;
     font-size: 14px;
@@ -671,7 +735,7 @@ textarea {
 
 .footer {
     width: 100%;
-    background-color: #1F1815;
+    background-color: var(--Black);
 
     display: flex;
     flex-direction: column;
@@ -685,7 +749,6 @@ textarea {
 
     display: flex;
     flex-direction: column;
-    /* align-items: flex-start; */
     gap: 16px;
 }
 
@@ -707,7 +770,7 @@ textarea {
 }
 
 .contacto>h3 {
-    color: #FFF;
+    color: var(--white);
     text-align: center;
     font-size: 18px;
     font-weight: 600;
@@ -717,7 +780,7 @@ textarea {
 .btn-contacto {
     border: none;
     border-radius: 4px;
-    background: #515051;
+    background: var(--Grey);
     padding: 12px 24px;
     display: flex;
     justify-content: center;
@@ -726,7 +789,7 @@ textarea {
 }
 
 .btn-contacto>p {
-    color: #FFF;
+    color: var(--white);
     font-size: 14px;
     font-weight: 600;
     line-height: 16px;
@@ -744,7 +807,7 @@ textarea {
 
 .menu-footer a {
     text-decoration: none;
-    color: white;
+    color: var(--white);
 }
 
 .marg1 {
@@ -761,9 +824,10 @@ textarea {
 }
 
 .footerDelFooter {
-    width: 1280px;
+    width: 100%;
     height: 40px;
     padding: 12px 380px 12px 540px;
+    background-color: var(--Dark-grey);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -772,7 +836,7 @@ textarea {
 .footerDelFooter>p {
     width: 359px;
     height: 16px;
-    color: #FFF;
+    color: var(--white);
     font-size: 14px;
     font-weight: 600;
     line-height: 16px;
