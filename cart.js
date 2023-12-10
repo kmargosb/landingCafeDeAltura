@@ -3,7 +3,16 @@ const cantidadCarrito = document.querySelector(".bag > span");
 const cantidadCesta = document.querySelector(".carrito-content > h2 > span");
 const totalContent = document.querySelector('.total-content');
 const cartProducts = document.querySelector('.cart-products');
+const envioGratis = document.getElementById("envioGratis");
+const envioUrgente = document.getElementById("envioUrgente");
+const labelEnvio = document.querySelectorAll('label')
 const carrito = JSON.parse(localStorage.getItem("cafes"));
+
+let envio = 9
+const envioCambio = () => {
+    envioGratis.checked ? envio = "GRATIS" : envioUrgente.checked ? envio = 9 : ''
+
+}
 
 const actualizarCarrito = (array) => {
     if (array) {
@@ -85,38 +94,68 @@ const drawCarrito = (array) => {
 const drawTotalCarrito = (array) => {
     totalContent.innerHTML = ''
     let subtotal = 0;
-    let envio = 0
     let total = 0;
+    envioCambio()
 
     if (array) {
         array.forEach((producto, i) => {
             subtotal += producto.cantidad * producto.price
-            total = subtotal + envio
-            totalContent.innerHTML =
-                `
-        <h3>Total del carrito</h3>
-                    <div class="divisor"></div>
-                    <div class="subtotal">
-                        <p>SUBTOTAL</p>
-                        <b>${subtotal},00€</b>
-                    </div>
-                    <div class="enviogratis">
-                        <p>ENVÍO</p>
-                        <b>GRATIS</b>
-                    </div>
-                    <div class="divisor"></div>
-                    <div class="totaltotal">
-                        <b>TOTAL</b>
-                        <div class="total90">
-                            <b>${total},00€</b>
-                            <p>Incluye 3,74€ de IVA</p>
+            if (envio == 9) {
+                total = subtotal + envio
+                totalContent.innerHTML =
+                    `
+            <h3>Total del carrito</h3>
+                        <div class="divisor"></div>
+                        <div class="subtotal">
+                            <p>SUBTOTAL</p>
+                            <b>${subtotal},00€</b>
                         </div>
-                    </div>
-                    <div>
-                        <button class="btn-enviar">Ir a chekout</button>
-                        <button class="newBtn">Seguir comprando</button>
-                    </div>
-        `
+                        <div class="enviogratis">
+                            <p>ENVÍO</p>
+                            <b>${envio},00€</b>
+                        </div>
+                        <div class="divisor"></div>
+                        <div class="totaltotal">
+                            <b>TOTAL</b>
+                            <div class="total90">
+                                <b>${total},00€</b>
+                                <p>Incluye 3,74€ de IVA</p>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn-enviar">Ir a chekout</button>
+                            <button class="newBtn">Seguir comprando</button>
+                        </div>
+            `
+            } else {
+                total = subtotal
+                totalContent.innerHTML =
+                    `
+            <h3>Total del carrito</h3>
+                        <div class="divisor"></div>
+                        <div class="subtotal">
+                            <p>SUBTOTAL</p>
+                            <b>${subtotal},00€</b>
+                        </div>
+                        <div class="enviogratis">
+                            <p>ENVÍO</p>
+                            <b>${envio}</b>
+                        </div>
+                        <div class="divisor"></div>
+                        <div class="totaltotal">
+                            <b>TOTAL</b>
+                            <div class="total90">
+                                <b>${total},00€</b>
+                                <p>Incluye 3,74€ de IVA</p>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn-enviar">Ir a chekout</button>
+                            <button class="newBtn">Seguir comprando</button>
+                        </div>
+            `
+            }
+
         })
     }
 };
@@ -124,8 +163,14 @@ const drawTotalCarrito = (array) => {
 const borrar = (i) => {
     carrito.splice(i, 1)
 };
+envioGratis.addEventListener("change", function () {
+    drawTotalCarrito(carrito)
+});
+envioUrgente.addEventListener("change", function () {
+    drawTotalCarrito(carrito)
+});
+
 
 drawCarrito(carrito);
 drawTotalCarrito(carrito);
 actualizarCarrito(carrito);
-
